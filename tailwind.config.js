@@ -9,7 +9,13 @@ module.exports = {
 			lg: '976px',
 			xl: '1440px',
 		},
-		extend: {},
+		extend: {
+			colors: {
+				accent: '#E56B6F',
+				dark: '#293241',
+				'dark-blue': '#355070',
+			},
+		},
 		fontFamily: {
 			display: ['Inter', 'system-ui', 'sans-serif'],
 			body: ['Inter', 'system-ui', 'sans-serif'],
