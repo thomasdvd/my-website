@@ -16,8 +16,8 @@ export default function Project({
 }: Props) {
 	return (
 		<FadeInWhenVisible>
-			<div className="max-w-6xl mx-auto py-8 px-6 lg:px-16 flex flex-col items-center justify-center xl:flex-row">
-				<div className="p-6 relative left-0 opacity-80">
+			<div className="max-w-6xl mx-auto py-8 px-2 md:px-6 lg:px-16 flex flex-col items-center justify-center xl:flex-row">
+				<div className="p-2 md:p-6 relative left-0 opacity-80">
 					<p className="mb-4">
 						{nameAsLink ? (
 							<a

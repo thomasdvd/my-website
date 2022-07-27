@@ -1,6 +1,8 @@
+import FadeInWhenVisible from './FadeIn';
+
 export default function About() {
 	return (
-		<>
+		<FadeInWhenVisible>
 			<p className="text-4xl py-8">About</p>
 			<div className="flex flex-col items-center md:flex-row md:space-x-10 space-y-10">
 				<figure className="shrink-0 w-60 h-60 bg-gray-100 rounded-md"></figure>
@@ -13,6 +15,6 @@ export default function About() {
 					systems into an intuitive experience.
 				</div>
 			</div>
-		</>
+		</FadeInWhenVisible>
 	);
 }

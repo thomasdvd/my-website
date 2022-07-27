@@ -7,7 +7,7 @@ export default function Hero() {
 				<div>
 					<div className="text-2xl">Hey 👋, I am David</div>
 
-					<div className="text-xl md:text-2xl mt-4 md:mr-40">
+					<div className="text-base md:text-2xl mt-4 md:mr-40">
 						A full-stack web developer focused on enterprise applications that
 						integrate seamlessly with any system. Always keen to learn new
 						skills.
