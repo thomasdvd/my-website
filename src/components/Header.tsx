@@ -1,51 +1,58 @@
-import { useState } from 'react';
-import { MdOutlineMenu, MdClose } from 'react-icons/md';
+import { useEffect, useState } from 'react';
+
+import { Link as LinkScroll } from 'react-scroll';
 
 import Logo from './icons/Logo';
 
+const links = ['skills', 'projects', 'about'] as const;
+
+type Link = typeof links[number];
+
 export default function Header() {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [activeLink, setActiveLink] = useState<Link | null>(null);
+	const [scrollActive, setScrollActive] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			setScrollActive(window.scrollY > 20);
+		});
+	}, []);
 
 	return (
-		<>
-			<div className="flex items-center justify-between h-16">
-				<div className="w-full flex items-center justify-between">
-					<Logo />
+		<header
+			className={
+				'fixed top-0 z-30 flex h-16 w-full items-center justify-between px-4 transition-all' +
+				(scrollActive
+					? ' bg-white text-black shadow-md'
+					: ' bg-gradient-to-r from-dark to-dark-blue pt-4 text-white')
+			}
+		>
+			<div className="mx-auto flex w-[72rem] max-w-6xl items-center justify-between">
+				<Logo fill={scrollActive ? 'black' : 'white'} />
 
-					<div className="hidden md:block">
-						<div className="ml-10 flex items-baseline space-x-12 text-white text-xl font-medium">
-							<a href="#skills">Skills</a>
-							<a href="#projects">Projects</a>
-							<a href="#about">About</a>
-							<a href="#contact">Contact</a>
-						</div>
-					</div>
-				</div>
-
-				<div className="md:hidden">
-					<button className="text-white">
-						{isOpen ? (
-							<MdClose size={32} onClick={() => setIsOpen(false)} />
-						) : (
-							<MdOutlineMenu size={32} onClick={() => setIsOpen(true)} />
-						)}
-					</button>
+				<div className="text:base ml-0 flex items-baseline space-x-1 font-medium md:ml-10 md:space-x-8 md:text-xl">
+					{links.map((l) => (
+						<LinkScroll
+							activeClass="active"
+							offset={-120}
+							key={l}
+							to={l}
+							spy={true}
+							smooth={true}
+							duration={300}
+							onSetActive={() => {
+								setActiveLink(l);
+							}}
+							className={
+								'animation-hover relative my-2 inline-block cursor-pointer py-2 px-4 ' +
+								(activeLink === l ? 'animation-active ' : '')
+							}
+						>
+							{l}
+						</LinkScroll>
+					))}
 				</div>
 			</div>
-
-			{isOpen && (
-				<div
-					className="md:hidden absolute bg-gradient-to-r from-dark to-dark-blue inset-x-0 border-white border-b-4 shadow-lg"
-					id="mobile-menu"
-				>
-					<div className="flex flex-col items-center p-2 pb-3 space-y-4 text-white text-xl font-medium sm:px-3">
-						<a href="#">Skills</a>
-						<a href="#">Projects</a>
-						<a href="#">About</a>
-						<a href="#">Contact</a>
-					</div>
-				</div>
-			)}
-		</>
+		</header>
 	);
 }

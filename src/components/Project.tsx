@@ -16,15 +16,15 @@ export default function Project({
 }: Props) {
 	return (
 		<FadeInWhenVisible>
-			<div className="max-w-6xl mx-auto py-8 px-2 md:px-6 lg:px-16 flex flex-col items-center justify-center xl:flex-row">
-				<div className="p-2 md:p-6 relative left-0 opacity-80">
+			<div className="mx-auto flex max-w-6xl flex-col items-center justify-center px-2 pt-4 pb-16 md:py-16 md:px-6 lg:px-16 xl:flex-row">
+				<div className="relative left-0 p-2 opacity-80 md:p-6">
 					<div className="mb-4">
 						{nameAsLink ? (
 							<a
 								href="https://app.villatrans.it"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-2xl font-bold text-white underline flex items-end space-x-2"
+								className="flex items-end space-x-2 text-2xl font-bold text-white underline"
 							>
 								<text>{name}</text>
 								<HiExternalLink />
@@ -34,15 +34,15 @@ export default function Project({
 						)}
 					</div>
 
-					<p className="py-2 px-4 text-xl bg-gray-300 text-gray-900 rounded-md shadow-lg w-[24rem] md:w-[32rem] text-justify">
+					<p className="w-[20rem] rounded-md bg-gray-300 py-2 px-4 text-justify text-base text-gray-900 shadow-lg md:w-[32rem] md:text-xl">
 						{description}
 					</p>
 
-					<div className="flex flex-wrap mt-1">
+					<div className="mt-1 flex w-[20rem] flex-wrap md:w-[32rem]">
 						{techStack.map((tech) => (
 							<text
 								key={tech}
-								className="m-2 px-2 py-0.5 bg-gray-600 rounded-md text-white opacity-90"
+								className="m-2 rounded-md bg-gray-600 px-2 py-0.5 text-sm text-white opacity-90 md:text-base"
 							>
 								{tech}
 							</text>
@@ -50,7 +50,7 @@ export default function Project({
 					</div>
 				</div>
 
-				<figure className="w-[24rem] md:w-[32rem] h-80 shrink-0 rounded-lg bg-gray-200"></figure>
+				<figure className="h-80 w-[20rem] shrink-0 rounded-lg bg-gray-200 md:w-[32rem]"></figure>
 			</div>
 		</FadeInWhenVisible>
 	);

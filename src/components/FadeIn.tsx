@@ -5,14 +5,19 @@ import { motion } from 'framer-motion';
 interface Props {
 	children: ReactNode;
 	delay?: number;
+	once?: boolean;
 }
 
-export default function FadeInWhenVisible({ children, delay = 0 }: Props) {
+export default function FadeInWhenVisible({
+	children,
+	delay = 0,
+	once = true,
+}: Props) {
 	return (
 		<motion.div
 			initial="hidden"
 			whileInView="visible"
-			viewport={{ once: true }}
+			viewport={{ once }}
 			transition={{ duration: 0.5, delay }}
 			variants={{
 				visible: { opacity: 1, y: 0 },

@@ -18,41 +18,38 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<section className="w-full h-[30rem] bg-gradient-to-r from-dark to-dark-blue">
-				<div className="px-6 lg:px-16 max-w-6xl mx-auto">
-					<Header />
-					<Hero />
-				</div>
-			</section>
+			<Header />
+			<Hero />
 
 			<Skills />
 
-			<div className="mb-16" />
-
 			<section
 				id="projects"
-				className="bg-gradient-to-r from-dark to-dark-blue"
+				className="bg-gradient-to-r from-dark to-dark-blue py-16"
 			>
-				<section className="max-w-6xl mx-auto text-4xl py-8 px-6 lg:px-16 text-white">
+				<section className="mx-auto max-w-6xl px-6 text-4xl text-white lg:px-16">
 					Projects
+					{projects.map((p) => (
+						<Project key={p.name} {...p} />
+					))}
 				</section>
-				{projects.map((p) => (
-					<Project key={p.name} {...p} />
-				))}
 			</section>
 
-			<section id="about" className="max-w-6xl mx-auto py-8 px-6 lg:px-16">
+			<section
+				id="about"
+				className="mx-auto mb-16 max-w-6xl py-16 px-6 lg:px-16"
+			>
 				<About />
 			</section>
 
-			<section className="border-y-2 border bg-gray-100 shadow-inner">
-				<div className="max-w-6xl mx-auto py-4 px-6 lg:px-16">
+			<section className="border border-y-2 bg-gray-100 shadow-inner">
+				<div className="mx-auto max-w-6xl py-12 px-6 lg:px-16">
 					<Callout />
 				</div>
 			</section>
 
-			<section className="bg-gradient-to-r from-dark to-dark-blue">
-				<section className="max-w-6xl mx-auto px-6 lg:px16">
+			<section className="bg-gradient-to-r from-dark to-dark-blue py-4">
+				<section className="lg:px16 mx-auto max-w-6xl px-6">
 					<Contact />
 				</section>
 			</section>

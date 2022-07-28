@@ -7,7 +7,7 @@ export default function Callout() {
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<div className="text-xl flex justify-center space-x-4 items-center">
+			<div className="flex items-center justify-center space-x-4 text-xl">
 				<div className="text-accent underline">
 					checkout this website on github
 				</div>

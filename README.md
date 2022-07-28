@@ -46,3 +46,9 @@ Notice the website is already prepared. The **"what"** is clear at this point. N
 ### 4. Coding
 
 Initialize git repository, setup package json, work on readme file and content. Slowly add folders and files.
+
+## Visibility strategy
+
+- discord channels
+- reddit
+- youtube portfolio review
