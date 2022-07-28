@@ -23,9 +23,12 @@ function SmallSkillCard({
 }) {
 	return (
 		<FadeInWhenVisible delay={index / 10}>
-			<div className="m-2 p-4 md:p-6 w-28 rounded-md bg-gray-100 opacity-80 flex flex-col items-center border hover:border-accent hover:shadow-lg">
+			<div
+				className="m-2 p-4 md:p-6 w-28 rounded-md bg-gray-100 opacity-80 flex flex-col items-center border 
+				hover:border-accent hover:shadow-lg transition-all"
+			>
 				<Image alt={name} src={`/${name}.svg`} width={size} height={size} />
-				<text className="italic pt-2">{name}</text>
+				<p className="italic pt-2">{name}</p>
 			</div>
 		</FadeInWhenVisible>
 	);

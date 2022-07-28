@@ -18,7 +18,7 @@ export default function Project({
 		<FadeInWhenVisible>
 			<div className="max-w-6xl mx-auto py-8 px-2 md:px-6 lg:px-16 flex flex-col items-center justify-center xl:flex-row">
 				<div className="p-2 md:p-6 relative left-0 opacity-80">
-					<p className="mb-4">
+					<div className="mb-4">
 						{nameAsLink ? (
 							<a
 								href="https://app.villatrans.it"
@@ -32,7 +32,7 @@ export default function Project({
 						) : (
 							<p className="text-2xl font-bold text-white">{name}</p>
 						)}
-					</p>
+					</div>
 
 					<p className="py-2 px-4 text-xl bg-gray-300 text-gray-900 rounded-md shadow-lg w-[24rem] md:w-[32rem] text-justify">
 						{description}
