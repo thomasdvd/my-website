@@ -42,7 +42,7 @@ export default function Project({
 						{techStack.map((tech) => (
 							<text
 								key={tech}
-								className="m-2 rounded-md bg-gray-600 px-2 py-0.5 text-sm text-white opacity-90 md:text-base"
+								className="m-2 rounded-md border-2 border-accent px-2 py-0.5 text-sm text-white opacity-90 md:text-base"
 							>
 								{tech}
 							</text>

@@ -14,14 +14,18 @@ export default function Header() {
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => {
-			setScrollActive(window.scrollY > 20);
+			const scrolling = window.scrollY > 20;
+			setScrollActive(scrolling);
+			if (!scrolling) setActiveLink(null);
 		});
 	}, []);
+
+	// BUG, on a tall screen the about page can never be active
 
 	return (
 		<header
 			className={
-				'fixed top-0 z-30 flex h-16 w-full items-center justify-between px-4 transition-all' +
+				'fixed top-0 z-10 flex h-16 w-full items-center justify-between px-4 transition-all' +
 				(scrollActive
 					? ' bg-white text-black shadow-md'
 					: ' bg-gradient-to-r from-dark to-dark-blue pt-4 text-white')
@@ -30,11 +34,13 @@ export default function Header() {
 			<div className="mx-auto flex w-[72rem] max-w-6xl items-center justify-between">
 				<Logo fill={scrollActive ? 'black' : 'white'} />
 
-				<div className="text:base ml-0 flex items-baseline space-x-1 font-medium md:ml-10 md:space-x-8 md:text-xl">
+				<div className="text:base flex items-baseline font-medium transition-all md:ml-10 md:space-x-16 md:text-xl">
 					{links.map((l) => (
 						<LinkScroll
-							activeClass="active"
-							offset={-120}
+							/* allows two links to have active at the same time */
+							/* manually bypassing with state so that there is only one Link active */
+							activeClass="x"
+							offset={l === 'projects' ? -20 : -120}
 							key={l}
 							to={l}
 							spy={true}
@@ -44,8 +50,8 @@ export default function Header() {
 								setActiveLink(l);
 							}}
 							className={
-								'animation-hover relative my-2 inline-block cursor-pointer py-2 px-4 ' +
-								(activeLink === l ? 'animation-active ' : '')
+								'link relative my-2 inline-block cursor-pointer ' +
+								(activeLink === l ? 'active' : '')
 							}
 						>
 							{l}
