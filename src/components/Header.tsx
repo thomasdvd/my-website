@@ -11,16 +11,35 @@ type Link = typeof links[number];
 export default function Header() {
 	const [activeLink, setActiveLink] = useState<Link | null>(null);
 	const [scrollActive, setScrollActive] = useState(false);
+	const [isAtBottom, setIsAtBottom] = useState(false);
 
 	useEffect(() => {
+		// isAtBottom serves in case of large screens
+		// about section is not tall enough to trigger
+		// it's state as active,
 		window.addEventListener('scroll', () => {
 			const scrolling = window.scrollY > 20;
+			const bottom =
+				Math.ceil(window.innerHeight + window.scrollY) >=
+				document.documentElement.scrollHeight;
 			setScrollActive(scrolling);
 			if (!scrolling) setActiveLink(null);
+
+			if (bottom) {
+				setIsAtBottom(true);
+			} else {
+				setIsAtBottom(false);
+			}
 		});
 	}, []);
 
-	// BUG, on a tall screen the about page can never be active
+	useEffect(() => {
+		if (window.innerWidth > 800 && window.innerHeight > 1000) {
+			if (isAtBottom && activeLink !== 'about') setActiveLink('about');
+			if (!isAtBottom && activeLink === 'about') setActiveLink('projects');
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [isAtBottom]);
 
 	return (
 		<header
@@ -34,7 +53,7 @@ export default function Header() {
 			<div className="mx-auto flex w-[72rem] max-w-6xl items-center justify-between">
 				<Logo fill={scrollActive ? 'black' : 'white'} />
 
-				<div className="text:base flex items-baseline font-medium transition-all md:ml-10 md:space-x-16 md:text-xl">
+				<div className="text:base flex items-baseline space-x-4 font-medium transition-all md:ml-10 md:space-x-16 md:text-xl">
 					{links.map((l) => (
 						<LinkScroll
 							/* allows two links to have active at the same time */
