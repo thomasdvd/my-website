@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import About from 'src/components/About';
@@ -11,6 +12,16 @@ import Skills from 'src/components/Skills';
 import { projects } from 'src/content/projects';
 
 const Home: NextPage = () => {
+	const [scrollActive, setScrollActive] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			setScrollActive(window.scrollY > 20);
+		});
+
+		// return cleanup function
+	}, []);
+
 	return (
 		<>
 			<Head>
@@ -18,8 +29,8 @@ const Home: NextPage = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<Header />
-			<Hero />
+			<Header scrollActive={scrollActive} />
+			<Hero scrollActive={scrollActive} />
 
 			<Skills />
 

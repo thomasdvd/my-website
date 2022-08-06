@@ -8,30 +8,25 @@ const links = ['skills', 'projects', 'about'] as const;
 
 type Link = typeof links[number];
 
-export default function Header() {
+export default function Header({ scrollActive }: { scrollActive: boolean }) {
 	const [activeLink, setActiveLink] = useState<Link | null>(null);
-	const [scrollActive, setScrollActive] = useState(false);
 	const [isAtBottom, setIsAtBottom] = useState(false);
 
 	useEffect(() => {
 		// isAtBottom serves in case of large screens
 		// about section is not tall enough to trigger
 		// it's state as active,
-		window.addEventListener('scroll', () => {
-			const scrolling = window.scrollY > 20;
-			const bottom =
-				Math.ceil(window.innerHeight + window.scrollY) >=
-				document.documentElement.scrollHeight;
-			setScrollActive(scrolling);
-			if (!scrolling) setActiveLink(null);
+		const bottom =
+			Math.ceil(window.innerHeight + window.scrollY) >=
+			document.documentElement.scrollHeight;
+		if (!scrollActive) setActiveLink(null);
 
-			if (bottom) {
-				setIsAtBottom(true);
-			} else {
-				setIsAtBottom(false);
-			}
-		});
-	}, []);
+		if (bottom) {
+			setIsAtBottom(true);
+		} else {
+			setIsAtBottom(false);
+		}
+	}, [scrollActive]);
 
 	useEffect(() => {
 		if (window.innerWidth > 800 && window.innerHeight > 1000) {
@@ -44,7 +39,7 @@ export default function Header() {
 	return (
 		<header
 			className={
-				'fixed top-0 z-10 flex h-16 w-full items-center justify-between px-4 transition-all' +
+				'fixed top-0 z-30 flex h-16 w-full items-center justify-between px-4 transition-all' +
 				(scrollActive
 					? ' bg-white text-black shadow-md'
 					: ' bg-dark pt-4 text-white')

@@ -7,7 +7,7 @@ export default function About() {
 
 	const buttons = [
 		{
-			text: 'Basic',
+			text: 'Short',
 			icon: MdOutlineShortText,
 			onClick: () => setIsLong(false),
 			isActive: !isLong,
