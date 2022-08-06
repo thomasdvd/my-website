@@ -47,11 +47,11 @@ export default function Header() {
 				'fixed top-0 z-10 flex h-16 w-full items-center justify-between px-4 transition-all' +
 				(scrollActive
 					? ' bg-white text-black shadow-md'
-					: ' bg-gradient-to-r from-dark to-dark-blue pt-4 text-white')
+					: ' bg-dark pt-4 text-white')
 			}
 		>
 			<div className="mx-auto flex w-[72rem] max-w-6xl items-center justify-between">
-				<Logo fill={scrollActive ? 'black' : 'white'} />
+				<Logo fill={scrollActive ? '#334155' : 'white'} />
 
 				<div className="text:base flex items-baseline space-x-4 font-medium transition-all md:ml-10 md:space-x-16 md:text-xl">
 					{links.map((l) => (

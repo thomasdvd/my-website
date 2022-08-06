@@ -17,6 +17,12 @@ a {
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	html {
+		font-family: monospace, system-ui, sans-serif;
+	}
+}
+
 .link:after {
 	display: block;
 	position: absolute;

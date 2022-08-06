@@ -34,7 +34,7 @@ export default function Project({
 						)}
 					</div>
 
-					<p className="w-[20rem] rounded-md bg-gray-300 py-2 px-4 text-justify text-base text-gray-900 shadow-lg md:w-[32rem] md:text-xl">
+					<p className="w-[20rem] rounded-md bg-gray-300 py-2 px-4 text-justify text-base text-dark shadow-lg md:w-[32rem] md:text-xl">
 						{description}
 					</p>
 

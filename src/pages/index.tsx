@@ -23,10 +23,7 @@ const Home: NextPage = () => {
 
 			<Skills />
 
-			<section
-				id="projects"
-				className="bg-gradient-to-r from-dark to-dark-blue py-16"
-			>
+			<section id="projects" className="bg-dark py-16">
 				<section className="mx-auto max-w-6xl px-6 text-4xl text-white lg:px-16">
 					Projects
 					{projects.map((p) => (
@@ -48,7 +45,7 @@ const Home: NextPage = () => {
 				</div>
 			</section>
 
-			<section className="bg-gradient-to-r from-dark to-dark-blue py-4">
+			<section className="bg-dark py-4">
 				<section className="lg:px16 mx-auto max-w-6xl px-6">
 					<Contact />
 				</section>

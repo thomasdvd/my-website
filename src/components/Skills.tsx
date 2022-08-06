@@ -55,7 +55,7 @@ function SmallSkillCard({
 export default function Skills() {
 	return (
 		<section id="skills" className="mb-20">
-			<div className="mx-auto -mt-20 w-[20rem] rounded-md bg-white p-2 shadow-md md:w-[40rem]">
+			<div className="mx-auto -mt-20 w-[14rem] rounded-md bg-white p-2 shadow-md md:w-[40rem]">
 				<h1 className="-mt-10 text-xl italic text-white">specialized in:</h1>
 				<div className="mt-5 flex flex-col justify-around md:flex-row">
 					<SkillCard name={'react'} size={100} years={2} />

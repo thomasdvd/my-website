@@ -11,8 +11,9 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				accent: '#E56B6F',
-				dark: '#293241',
+				/* accent: '#E56B6F', */
+				accent: '#334155',
+				dark: '#0f172a',
 				'dark-blue': '#355070',
 			},
 		},
