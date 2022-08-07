@@ -4,7 +4,7 @@ export default function Contact() {
 	return (
 		<div className="flex items-center justify-between">
 			<Logo fill="white" />
-			<div className="text:sm flex w-1/2 -translate-x-1/4 space-x-4 font-bold text-gray-200 underline md:space-x-10 md:text-xl">
+			<div className="flex w-1/2 -translate-x-1/4 space-x-4 font-bold text-gray-200 underline md:space-x-10 md:text-xl">
 				<a
 					href="https://github.com/thomasdvd"
 					target="_blank"

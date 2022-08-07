@@ -39,7 +39,7 @@ export default function Header({ scrollActive }: { scrollActive: boolean }) {
 	return (
 		<header
 			className={
-				'fixed top-0 z-30 flex h-16 w-full items-center justify-between px-4 transition-all' +
+				'fixed top-0 z-40 flex h-16 w-full items-center justify-between px-4 transition-all' +
 				(scrollActive
 					? ' bg-white text-black shadow-md'
 					: ' bg-dark pt-4 text-white')
@@ -48,7 +48,7 @@ export default function Header({ scrollActive }: { scrollActive: boolean }) {
 			<div className="mx-auto flex w-[72rem] max-w-6xl items-center justify-between">
 				<Logo fill={scrollActive ? '#334155' : 'white'} />
 
-				<div className="text:base flex items-baseline space-x-4 font-medium transition-all md:ml-10 md:space-x-16 md:text-xl">
+				<div className="flex items-baseline space-x-4 font-medium transition-all md:ml-10 md:space-x-16 md:text-xl">
 					{links.map((l) => (
 						<LinkScroll
 							/* allows two links to have active at the same time */

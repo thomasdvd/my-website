@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import FadeInWhenVisible from './FadeIn';
 
@@ -60,7 +61,14 @@ export default function Hero({ scrollActive }: { scrollActive: boolean }) {
 							</div>
 						</div>
 
-						<figure className="ml-2 h-40 w-40 shrink-0 rounded-full border-4 border-accent bg-gray-300" />
+						<div className="relative ml-2 h-40 w-40 shrink-0 overflow-hidden rounded-full border-4 border-accent bg-gray-300">
+							<Image
+								src="/me-hero.png"
+								alt="profile picture"
+								layout="fill"
+								objectFit="contain"
+							/>
+						</div>
 					</div>
 				</FadeInWhenVisible>
 			</div>

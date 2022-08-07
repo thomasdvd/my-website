@@ -1,6 +1,11 @@
 {
-	"plugins": ["react", "@typescript-eslint"],
-	"extends": ["plugin:@typescript-eslint/recommended", "next", "prettier"],
+	"plugins": ["react", "@typescript-eslint", "tailwindcss"],
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"next",
+		"prettier",
+		"plugin:tailwindcss/recommended"
+	],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaVersion": 12,

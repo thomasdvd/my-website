@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useState } from 'react';
 import { MdOutlineShortText, MdOutlineViewHeadline } from 'react-icons/md';
 import FadeInWhenVisible from './FadeIn';
@@ -25,7 +26,14 @@ export default function About() {
 			<p className="py-8 pb-16 text-4xl">About</p>
 
 			<div className="flex flex-col items-center space-y-10 align-middle md:flex-row md:space-x-10">
-				<figure className="h-80 w-80 shrink-0 rounded-md bg-gray-100"></figure>
+				<div className="relative h-96 w-72 shrink-0 overflow-hidden rounded-md border-4 border-accent bg-gray-100 shadow-xl">
+					<Image
+						src="/me-about.jpg"
+						alt="about picture"
+						layout="fill"
+						objectFit="cover"
+					/>
+				</div>
 
 				<div>
 					<div

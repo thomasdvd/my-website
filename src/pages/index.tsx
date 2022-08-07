@@ -57,7 +57,7 @@ const Home: NextPage = () => {
 			</section>
 
 			<section className="bg-dark py-4">
-				<section className="lg:px16 mx-auto max-w-6xl px-6">
+				<section className="mx-auto max-w-6xl px-6 lg:px-16">
 					<Contact />
 				</section>
 			</section>

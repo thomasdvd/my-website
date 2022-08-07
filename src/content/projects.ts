@@ -5,6 +5,7 @@ export const projects = [
 		description:
 			"Enterprise application that integrates with company's Transport Management System. Users can keep track of their vehicles in real-time and manage their orders.",
 		techStack: ['nextjs', 'nodejs', 'postgresql', 'digital ocean', 'nginx'],
+		images: ['vt-landing', 'vt-login', 'vt-map', 'vt-trip'],
 	},
 	{
 		name: 'Warehouse extension',
@@ -21,5 +22,6 @@ export const projects = [
 			'cups',
 			'docker',
 		],
+		images: ['whse-ogl', 'whse-oglin'],
 	},
 ];

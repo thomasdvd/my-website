@@ -15,7 +15,7 @@ function SkillCard({
 	return (
 		<FadeInWhenVisible>
 			<div className="relative flex flex-col items-center pt-4">
-				<div className="absolute top-2 right-0 bottom-auto left-auto z-10 inline-block translate-x-2/4 -translate-y-1/2 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 whitespace-nowrap rounded-full bg-accent py-1 px-2.5 text-center align-baseline text-xs font-bold leading-none text-white">
+				<div className="absolute top-2 right-0 bottom-auto left-auto z-10 inline-block translate-x-2/4 -translate-y-1/2 rotate-0 skew-x-0 skew-y-0 scale-100 whitespace-nowrap rounded-full bg-accent py-1 px-2.5 text-center align-baseline text-xs font-bold leading-none text-white">
 					{years} y
 				</div>
 				<Image
